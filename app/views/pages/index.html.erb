@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Anime GIFs</h1>
+		</div>
+
+		<% Animegif.all.each do |gif| %>
+			<% title = gif.url %>
+			<% urlClass = gif.urlType %>
+			<% if urlClass.include? "gfycat" %>
+				<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+
+				
+					<div class="embed-responsive embed-responsive-16by9">
+								<video class="embed-responsive-item" autoplay loop poster="http://thumbs.gfycat.com/<%= title %>-thumb360.jpg">     
+			            <source src=<%= gif.webmurl %> type="video/webm">
+			            <source src=<%= gif.mp4url %> type="video/mp4">
+			 		</video>  
+			 	</div>
+			 </div>
+		 	<% else %> 
+				
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+ <script type"text/javascript" src="http://test.gfycat.com/gfycat_test_may18.js"></script>  
+<script>
+
+ (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
+    s.parentNode.insertBefore(g, s);
+}(document, 'script'));
+
+
+
+
+</script>

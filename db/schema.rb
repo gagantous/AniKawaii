@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929094548) do
+ActiveRecord::Schema.define(version: 20151003093143) do
 
   create_table "animegifs", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20150929094548) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "urlType"
+    t.string   "mp4url"
+    t.string   "webmurl"
   end
 
 end
