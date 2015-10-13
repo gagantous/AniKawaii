@@ -1,35 +1,65 @@
+
 <div class="container">
+
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Anime GIFs</h1>
+
+				<div class="flickr_pagination">
+					<%= will_paginate @animegif %>
+				</div>
 		</div>
 
-		<% Animegif.all.each do |gif| %>
+		<% @animegif.each do |gif| %>
 			<% title = gif.url %>
 			<% urlClass = gif.urlType %>
 			<% if urlClass.include? "gfycat" %>
 				<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+					<div class="video">
+						<div class="module">
+							<header>
+								<!-- title of gif <h3><%= gif.name %></h3> -->
+								<div class="vote">
 
-				
+								<%= image_tag("thumbs.png",:alt => "thumbsup") %>
+									<h4><%= gif.score %></h4>
+								</div>
+							</header>
 					<div class="embed-responsive embed-responsive-16by9">
-								<video class="embed-responsive-item" autoplay loop poster="http://thumbs.gfycat.com/<%= title %>-thumb360.jpg">     
+								<video class="embed-responsive-item" loop>     
 			            <source src=<%= gif.webmurl %> type="video/webm">
 			            <source src=<%= gif.mp4url %> type="video/mp4">
 			 		</video>  
+			 		</div>
 			 	</div>
 			 </div>
+			</div>
 		 	<% else %> 
-				
+				<!-- ALTERNATIVE, for now only HTML5 videos -->
 			<% end %>
 		<% end %>
 	</div>
+		<div class="flickr_pagination">
+			<%= will_paginate @animegif %>
+		</div>
 </div>
 
 
 
 
  <script type"text/javascript" src="http://test.gfycat.com/gfycat_test_may18.js"></script>  
+
 <script>
+
+	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
+	function hoverVideo(e) {
+		$('video',this).get(0).play();
+		$('header',this).hide();
+	}
+
+	function hideVideo(e) {
+		$('video',this).get(0).pause();
+		$('header',this).show();
+	}
 
  (function(d, t) {
     var g = d.createElement(t),

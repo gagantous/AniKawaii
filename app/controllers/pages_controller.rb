@@ -1,11 +1,10 @@
 class PagesController < ApplicationController
 
 
-	def fetch_subreddit(name)
-	 #  end
-	end
+	
 	def index
-		
+		#For some reason per_page is -2 the actual number
+		@animegif = Animegif.paginate(page: params[:page], per_page: 12)	
 
 	end
 
