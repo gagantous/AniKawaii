@@ -1,12 +1,138 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+.module {
+
+}
+
+// phones
+@media(max-width: 500px) {
+	.vote {
+			position: absolute !important;
+			top: 80% !important;
+			right: 45px;
+			z-index: 1;
+		}
+}
+
+
+// tablets
+@media(min-width: 500px) and (max-width: 768px) {
+	.vote {
+		position: absolute !important;
+		top: 85% !important;
+		right: 45px;
+		z-index: 1;
+	}
+
+	.vote h4 {
+	}
+
+}
+
+
+@media(min-width: 768px) and (max-width: 991px) {
+	.vote {
+		position: absolute;
+		top: 175px !important;
+		right: 45px;
+		z-index: 1;
+
+	}
+}
+
+// small desktop
+@media(min-width: 991px) and (max-width: 1200px) {
+	.vote {
+
+		position: absolute;
+		top: 155px !important;
+		right: 45px;
+		z-index: 1;
+	}
+}
+
+// star
+.vote {
+	position: absolute;
+	top: 195px;
+	right: 45px;
+	z-index: 1;
+
+}
+
+// for votes
+.module h4 {
+	font-size: 1.2em;
+	font-style: italic;
+	position: absolute;
+	top: -5px;
+	left: 35px;
+	color: white;
+	
+
+}
+
+// for anime title
+.module > header > h3 {
+	position: absolute;
+	top: 175px;
+	left: 0;
+	color: white;
+	width: 80%;
+	height: 10%;
+	overflow: hidden;
+	font-style: italic;
+	z-index: 1;
+	font-size: 1.0em;
+	background: rgba(0,0,0,0.60);
+}
+
+
+
 
 .thumb{
+	margin-right: 0px;
+	padding: 0px !important
 }
 
 .col-lg-4 {
-	padding: 50px !important;
+	padding: 0px !important;
 }
 
+.embed-responsive-item {
+	padding: 0px !important;
+	margin-right: 0px;
+	z-index: 0;
+	
+}
 
-
+.flickr_pagination {
+  text-align: right;
+  padding: 0.3em;
+  cursor: default; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+    padding: 0.2em 0.5em; }
+  .flickr_pagination .disabled {
+    color: #aaaaaa; }
+  .flickr_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .flickr_pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 2px; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em; }
+  .flickr_pagination .next_page {
+    margin-left: 1em; }
