@@ -10,7 +10,7 @@ class AnimegifsController < ApplicationController
 
 	end
 	def show
-		@Animegif = Animegif.find(params[:id])
+		@Animegif = Animegif.friendly.find(params[:id])
 
 	end
 

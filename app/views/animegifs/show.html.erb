@@ -1,6 +1,11 @@
 <div class="container">
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-1">
+			<%= link_to root_path do %> 
+ 			<button type="button" class="btn btn-primary btn-lg ">Back</button>
+ 			<% end %>
+		</div>
+		<div class="col-lg-11">
 
 			<h3 class="text-center text-primary"><%= @Animegif.name %></h3>
 		</div>
@@ -8,10 +13,12 @@
 			<div class="video">
 
 					<div class="embed-responsive embed-responsive-16by9">
+						
 						<video class="resize" loop>     
 							<source src=<%= @Animegif.webmurl %> type="video/webm">
 								<source src=<%= @Animegif.mp4url %> type="video/mp4">
 						</video>  
+
 					</div>
 				</div>
 			</div>
