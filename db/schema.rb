@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003093143) do
+ActiveRecord::Schema.define(version: 20151015101337) do
 
   create_table "animegifs", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151003093143) do
     t.string   "urlType"
     t.string   "mp4url"
     t.string   "webmurl"
+    t.string   "slug"
   end
 
 end

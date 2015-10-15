@@ -22,11 +22,16 @@
 									<h4><%= gif.score %></h4>
 								</div>
 							</header>
+
 					<div class="embed-responsive embed-responsive-16by9">
-								<video class="embed-responsive-item" loop>     
+						<%= link_to(gif) do %>
+								<video class="embed-responsive-item" loop>   
 			            <source src=<%= gif.webmurl %> type="video/webm">
 			            <source src=<%= gif.mp4url %> type="video/mp4">
+			            
 			 		</video>  
+
+			 		<% end %>
 			 		</div>
 			 	</div>
 			 </div>
