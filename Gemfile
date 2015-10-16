@@ -23,9 +23,14 @@ gem 'jbuilder', '~> 2.0'
 
 # Use Unicorn as the app server
 
-
+gem 'puma'
 group :development do
-	gem 'sqlite3'
+    gem 'sqlite3'
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 	
 end
 
