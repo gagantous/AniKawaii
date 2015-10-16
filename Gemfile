@@ -18,7 +18,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'puma'
 
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -28,11 +27,6 @@ gem 'puma'
 group :development do
 	gem 'sqlite3'
 	
-    gem 'capistrano',         require: false
-    gem 'capistrano-rvm',     require: false
-    gem 'capistrano-rails',   require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
 end
 
 group :production do
