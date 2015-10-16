@@ -8,7 +8,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'friendly_id', '~> 5.1.0'
-
 gem 'will_paginate', '~> 3.0.6'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -19,16 +18,21 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+gem 'puma'
+
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development do
 	gem 'sqlite3'
-	gem 'pry'
+	
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 end
 
 group :production do
