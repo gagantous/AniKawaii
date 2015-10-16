@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgres
+  adapter: postgresl
   pool: 5
   timeout: 5000
 
@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.postgres
+  database: db/production.postgresl
