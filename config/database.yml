@@ -23,3 +23,5 @@ test:
 production:
   <<: *default
   database: db/production.postgresql
+  username: deploy
+  password: chrispig1
