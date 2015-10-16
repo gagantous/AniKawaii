@@ -13,7 +13,7 @@ production:
   <<: *default
   database: db/anikawaii.postgresql
   encoding: unicode
-  username: deployer
-  password: password
+  username: deploy
+  password: chrispig1
 
 
