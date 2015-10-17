@@ -57,6 +57,7 @@ end
         upload! StringIO.new(File.read("config/application.yml")), "#{shared_path}/config/application.yml"
       end
     end
+  end
 
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
