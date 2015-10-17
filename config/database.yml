@@ -10,7 +10,6 @@ test:
 
 
 production:
-  <<: *default
   adapter: postgresql
   database: db/anikawaii.postgresql
   username: deploy
