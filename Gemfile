@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.0'
 
 # Use Unicorn as the app server
 
-gem 'puma'
 group :development do
     gem 'sqlite3'
 	
