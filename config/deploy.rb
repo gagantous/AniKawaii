@@ -46,6 +46,18 @@ namespace :puma do
   before :start, :make_dirs
 end
 
+  set :linked_files, %w{config/database.yml config/application.yml}
+  ...
+  namespace :deploy do
+    desc 'Upload YAML files.'
+    task :upload_yml do
+      on roles(:app) do
+        execute "mkdir #{shared_path}/config -p"
+        upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"
+        upload! StringIO.new(File.read("config/application.yml")), "#{shared_path}/config/application.yml"
+      end
+    end
+
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
