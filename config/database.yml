@@ -11,7 +11,7 @@ test:
 
 production:
   adapter: postgresql
-  database: db/anikawaii.postgresql
+  database: anikawaii.postgresql
   username: deploy
   password: chrispig1
 
