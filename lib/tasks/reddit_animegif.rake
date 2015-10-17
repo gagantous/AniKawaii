@@ -5,7 +5,8 @@ task :fetch_animegifs => :environment do
   require 'json'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-  url = "https://www.reddit.com/r/animegifs/.json?limit=100&after=t3_3ipb8o"
+  url = "https://www.reddit.com/r/animegifs/.json?limit=100"
+  #https://www.reddit.com/r/animegifs/.json?limit=100&after=t3_3ipb8o
   subreddit_json = JSON.load open(url)
 
   subreddit_json["data"]["children"].map do |s| 

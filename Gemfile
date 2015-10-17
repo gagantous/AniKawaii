@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 
+gem 'whenever', require: false
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
