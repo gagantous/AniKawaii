@@ -25,10 +25,11 @@
 
 					<div class="embed-responsive embed-responsive-16by9">
 						<%= link_to(gif) do %>
-								<video class="embed-responsive-item" loop>   
+								<video class="embed-responsive-item" poster="http://thumbs.gfycat.com/<%= title %>-poster.jpg" loop>   
+							  
 			            <source src=<%= gif.webmurl %> type="video/webm">
-			            <source src=<%= gif.mp4url %> type="video/mp4">
-			            
+			            <source src=<%= gif.mp4url %> type="video/mp4">	
+		            
 			 		</video>  
 
 			 		<% end %>
