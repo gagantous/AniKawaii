@@ -47,7 +47,7 @@ namespace :puma do
 end
 
   set :linked_files, %w{config/database.yml config/application.yml}
-  ...
+  
   namespace :deploy do
     desc 'Upload YAML files.'
     task :upload_yml do
