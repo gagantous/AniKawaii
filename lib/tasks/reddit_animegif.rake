@@ -33,7 +33,6 @@ task :fetch_animegifs => :environment do
             next
          end  
 
-       
         gfycatWebm = gfycatData["gfyItem"]["webmUrl"]
         gfycatMp4  = gfycatData["gfyItem"]["mp4Url"]
         Animegif.create(name: title,url: url,score: score,urlType: "gfycat",
