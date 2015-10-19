@@ -16,6 +16,7 @@ textarea{
 	border-radius: 6px;
 }
 
+
 .giftext {
 	position:  absolute;
 	top: 0%;
@@ -26,7 +27,7 @@ textarea{
 @media(max-width: 500px) {
 	.vote {
 			position: absolute !important;
-			top: 80% !important;
+			top: 87% !important;
 			right: 45px;
 			z-index: 1;
 		}
@@ -41,7 +42,8 @@ textarea{
 @media(min-width: 500px) and (max-width: 768px) {
 	.vote {
 		position: absolute !important;
-		top: 85% !important;
+		top: 93% !important;
+
 		right: 45px;
 		z-index: 1;
 	}
@@ -52,10 +54,12 @@ textarea{
 }
 
 
+
+
 @media(min-width: 768px) and (max-width: 991px) {
 	.vote {
 		position: absolute;
-		top: 175px !important;
+		top: 87% !important;
 		right: 45px;
 		z-index: 1;
 
