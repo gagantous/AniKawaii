@@ -58,13 +58,11 @@
  <script type"text/javascript" src="http://test.gfycat.com/gfycat_test_may18.js"></script>  
 
 <script>
-
-	function init() {
-
-	   if (navigator.userAgent.match(/iPad/i) != null) {
-	   		$(".embed-responsive-item").prop("controls", true);
-	   }
-	}	
+	
+	if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)){
+  		
+		$('video').prop("controls",true);
+	}
 
 	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
 	function hoverVideo(e) {
