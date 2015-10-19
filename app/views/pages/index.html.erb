@@ -10,7 +10,7 @@
 			<% urlClass = gif.urlType %>
 			<% if urlClass.include? "gfycat" %>
 
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 thumb">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 thumb">
 
 					<div class="video">
 						<div class="module">
@@ -59,9 +59,7 @@
 
 <script>
 
-	$('.embed-responsive').click(function(){
-   document.getElementById('.video').play();
-	});
+
 	
 	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
 	function hoverVideo(e) {
