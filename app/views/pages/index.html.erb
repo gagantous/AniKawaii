@@ -59,8 +59,13 @@
 
 <script>
 
+	function init() {
 
-	
+	   if (navigator.userAgent.match(/iPad/i) != null) {
+	   		$(".embed-responsive-item").prop("controls", true);
+	   }
+	}	
+
 	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
 	function hoverVideo(e) {
 		$('video',this).get(0).play();

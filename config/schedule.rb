@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 set :output, 'log/bug.log'
-every 2.minutes do
+every :hour do
   rake 'fetch_animegifs'
 end
