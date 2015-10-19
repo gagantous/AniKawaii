@@ -32,6 +32,11 @@
 
 <script>
 
+if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)){
+  		
+		$('video').prop("controls",true);
+	}
+
 	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
 	function hoverVideo(e) {
 		$('video',this).get(0).play();
