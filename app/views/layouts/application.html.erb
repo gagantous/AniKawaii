@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="Anikawaii is where you would be able to find all your short anime gifs clips together in one place">
+  <meta content="Anikawaii is where you would be able to find all your short anime gifs clips together in one place" name="description">
   <title>AniKawaii Anime Gifs</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -22,10 +22,17 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href=<%= root_path %>><span class="logotitle">AniKawaii</span></a>
+
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href=<%= about_path %>><h4 class="navitem">About</h4></a></li>
+              <li>
+                <a href=<%= about_path %>><h4 class="navitem">About</h4></a>
+              </li>
+               <li>
+                  <a href=<%= sort_rating_path %>><h4 class="navitem">Highest Votes</h4></a>
+               </li>
+
               
             </ul>
            

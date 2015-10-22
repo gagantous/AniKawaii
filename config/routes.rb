@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :animegifs
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
+  get 'sort_rating' => 'pages#ratingsort'
 
   # Example resource route with options:
   #   resources :products do
