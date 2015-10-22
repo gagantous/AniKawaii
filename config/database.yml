@@ -6,7 +6,7 @@ default: &default
   pool: 5
   host: localhost
   username: rails
-  password: chrispig1
+  password: wraith123
 
 development:
   adapter: sqlite3
@@ -25,4 +25,4 @@ production:
   <<: *default
   database: anikawaii_production
   username: rails
-  password: chrispig1
+  password: wraith123
