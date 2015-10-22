@@ -35,15 +35,21 @@ task :fetch_animegifs => :environment do
 
         gfycatWebm = gfycatData["gfyItem"]["webmUrl"]
         gfycatMp4  = gfycatData["gfyItem"]["mp4Url"]
-        Animegif.create(name: title,url: url,score: score,urlType: "gfycat",
+        creation = Animegif.find_or_create_by(name: title,url: url,urlType: "gfycat",
                        webmurl: gfycatWebm,mp4url: gfycatMp4)
+
+        if creation != nil
+          creation.update_attribute(:score,score)
+        else
+          puts "ERROR!, please check your rake file"
+        end
      else
       #  next if (!validExtensions.any? {|s| url.include?(s)} && url.include?("imgur") )
       #  if url.include? "gifv" 
       #   url.sub!("gifv","gif")
       # end
       # Animegif.create(name: title,url: url,score: score,urlType: "default")
-      puts "Not doing anything"
+      puts "Doing nothing because it's not gfycat address"
      end
 
     ## puts "#{upvotes} upvotes, #{downvotes} downvotes"
