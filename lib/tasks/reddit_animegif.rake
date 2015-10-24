@@ -19,6 +19,7 @@ task :fetch_animegifs => :environment do
      score = s["data"]["score"]
 
      if url.include? "gfycat"
+        puts "I am gfycat"
        if url.include? "gifv" 
         url.sub!("gifv","gif")
       end
@@ -43,13 +44,32 @@ task :fetch_animegifs => :environment do
         else
           puts "ERROR!, please check your rake file"
         end
-     else
-      #  next if (!validExtensions.any? {|s| url.include?(s)} && url.include?("imgur") )
-      #  if url.include? "gifv" 
-      #   url.sub!("gifv","gif")
-      # end
-      # Animegif.create(name: title,url: url,score: score,urlType: "default")
-      puts "Doing nothing because it's not gfycat address"
+     elsif url.include? "imgur"
+        next if (!validExtensions.any? {|s| url.include?(s)} && url.include?("imgur") )
+       if url.include? "gifv" 
+        url.sub!("gifv","gif")
+      end
+      puts "#{url}"
+        urlwebm = url.dup
+        urlmp4 = url.dup
+        urlposter = url.dup
+
+        urlposter.slice!(".gif?1")
+        urlposter.slice!(".gif")
+        urlposter << "l.jpg"
+        puts "I am Imgur"
+        url.slice!("http:")
+        url.slice!("https:")
+        webm = urlwebm.sub!("gif","webm")
+        mp4 = urlmp4.sub!("gif","mp4")
+
+        creation = Animegif.find_or_create_by(name: title,url: url,urlType: urlposter,
+                   webmurl: webm,mp4url: mp4)
+        if creation != nil
+          creation.update_attribute(:score,score)
+        else
+          puts "ERROR!, please check your rake file"
+        end
      end
 
     ## puts "#{upvotes} upvotes, #{downvotes} downvotes"
