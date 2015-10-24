@@ -1,3 +1,4 @@
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-1">
@@ -9,21 +10,31 @@
 
 			<h3 class="text-primary"><%= @Animegif.name %></h3>
 		</div>
-		<div class="col-lg-9 col-md-12 col-xs-12">
+
+		<div class="col-lg-9 col-md-12 col-xs-12">	
+		<% if @Animegif.urlType.include? "gfycat" %>
 			<div class="video">
 
 					<div class="embed-responsive embed-responsive-16by9">
 
-<video class="resize" poster="http://thumbs.gfycat.com/<%= @Animegif.url %>-poster.jpg" loop>
-
-     
+					<video class="resize" autoplay poster="http://thumbs.gfycat.com/<%= @Animegif.url %>-poster.jpg" loop>
 							<source src=<%= @Animegif.webmurl %> type="video/webm">
 								<source src=<%= @Animegif.mp4url %> type="video/mp4">
 						</video>  
 
 					</div>
-				</div>
 			</div>
+		<% else %>
+		<div class="video">
+			<div class="embed-responsive embed-responsive-16by9">
+				<video class="embed-responsive-item" autoplay poster=<%= @Animegif.urlType%> loop>	
+			        <source src=<%= @Animegif.webmurl %> type="video/webm">
+			         <source src=<%= @Animegif.mp4url %> type="video/mp4">	
+			 	</video>  
+			</div>
+		</div>
+		<% end %>
+		<!-- End of col-lg-9 column -->
 		</div>
 	</div>
 </div>
@@ -37,16 +48,7 @@ if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!=
 		$('video').prop("controls",true);
 	}
 
-	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
-	function hoverVideo(e) {
-		$('video',this).get(0).play();
-		$('header',this).hide();
-	}
 
-	function hideVideo(e) {
-		$('video',this).get(0).pause();
-		$('header',this).show();
-	}
 
  (function(d, t) {
     var g = d.createElement(t),
