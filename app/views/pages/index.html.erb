@@ -79,7 +79,7 @@
 		<% end %>
 	</div>
 		<div class="flickr_pagination">
-			<%= will_paginate @animegif %>
+			<%= will_paginate @animegif, renderer: BootstrapPagination::Rails %>
 		</div>
 </div>
 
