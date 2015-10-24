@@ -44,6 +44,7 @@ task :fetch_animegifs => :environment do
         else
           puts "ERROR!, please check your rake file"
         end
+        
      elsif url.include? "imgur"
         next if (!validExtensions.any? {|s| url.include?(s)} && url.include?("imgur") )
        if url.include? "gifv" 
