@@ -2,7 +2,15 @@
 // @import "bootstrap";
 
 
+.bg-image {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
 
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
 .center {
   display: block;
   margin-left: auto;
@@ -110,9 +118,13 @@ textarea{
 	background: rgba(0,0,0,0.60);
 }
 
+
+
 // nav items
 .navitem {
-	font-weight: normal;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   font-size: 1.6em;
 }
 
 // logo
@@ -124,6 +136,8 @@ textarea{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.60em;
 	font-weight: bold;
+	position: relative;
+	top: 3px;
 }
 
 
@@ -159,7 +173,7 @@ textarea{
 }
 
 .read {
-	font-size: 1.10em;
+	font-size: 1.20em;
 }
 
 .flickr_pagination {
