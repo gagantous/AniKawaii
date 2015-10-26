@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources :animegifs
+  get 'animegif/search' => 'pages#search'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
   get 'sort_rating' => 'pages#ratingsort'
