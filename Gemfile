@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg_search'
 gem 'simple_form'
 gem 'pg'
+
+gem 'sitemap_generator'
 gem 'whenever', require: false
 # gem 'bcrypt', '~> 3.1.7'
 

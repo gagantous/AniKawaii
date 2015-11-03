@@ -22,3 +22,7 @@ set :output, 'log/bug.log'
 every :hour do
   rake 'fetch_animegifs'
 end
+
+every 1.day, :at => '5:00 am' do
+  rake "-s sitemap:refresh"
+end
