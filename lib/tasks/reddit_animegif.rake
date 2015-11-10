@@ -39,10 +39,11 @@ task :fetch_animegifs => :environment do
         gfycatWebm = gfycatData["gfyItem"]["webmUrl"]
         gfycatMp4  = gfycatData["gfyItem"]["mp4Url"]
         creation = Animegif.find_or_create_by(name: title,url: url,urlType: "gfycat",
-                       webmurl: gfycatWebm,mp4url: gfycatMp4,redditurl: redditurl)
+                       webmurl: gfycatWebm,mp4url: gfycatMp4)
 
         if creation != nil
           creation.update_attribute(:score,score)
+          creation.update_attribute(:redditurl,redditurl)
         else
           puts "ERROR!, please check your rake file"
         end
@@ -67,9 +68,10 @@ task :fetch_animegifs => :environment do
         mp4 = urlmp4.sub!("gif","mp4")
 
         creation = Animegif.find_or_create_by(name: title,url: url,urlType: urlposter,
-                   webmurl: webm,mp4url: mp4,redditurl: redditurl)
+                   webmurl: webm,mp4url: mp4)
         if creation != nil
           creation.update_attribute(:score,score)
+          creation.update_attribute(:redditurl,redditurl)
         else
           puts "ERROR!, please check your rake file"
         end
