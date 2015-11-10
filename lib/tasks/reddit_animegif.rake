@@ -14,6 +14,8 @@ task :fetch_animegifs => :environment do
      validExtensions = ["jpeg","jpg","gif","gifv","png"]
      title = s["data"]["title"]
      url  = s["data"]["url"]
+     permalink = s["data"]["permalink"]
+     redditurl = "http://www.reddit.com" + permalink
      upvotes = s["data"]["ups"]
      downvotes = s["data"]["downs"]
      score = s["data"]["score"]
@@ -37,7 +39,7 @@ task :fetch_animegifs => :environment do
         gfycatWebm = gfycatData["gfyItem"]["webmUrl"]
         gfycatMp4  = gfycatData["gfyItem"]["mp4Url"]
         creation = Animegif.find_or_create_by(name: title,url: url,urlType: "gfycat",
-                       webmurl: gfycatWebm,mp4url: gfycatMp4)
+                       webmurl: gfycatWebm,mp4url: gfycatMp4,redditurl: redditurl)
 
         if creation != nil
           creation.update_attribute(:score,score)
@@ -65,7 +67,7 @@ task :fetch_animegifs => :environment do
         mp4 = urlmp4.sub!("gif","mp4")
 
         creation = Animegif.find_or_create_by(name: title,url: url,urlType: urlposter,
-                   webmurl: webm,mp4url: mp4)
+                   webmurl: webm,mp4url: mp4,redditurl: redditurl)
         if creation != nil
           creation.update_attribute(:score,score)
         else

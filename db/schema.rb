@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015101337) do
+ActiveRecord::Schema.define(version: 20151110111152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151015101337) do
     t.string   "mp4url"
     t.string   "webmurl"
     t.string   "slug"
+    t.string   "redditurl"
   end
 
 end
