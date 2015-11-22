@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
   get 'sort_rating' => 'pages#ratingsort'
+  get 'random' => 'pages#random'
 
   # Example resource route with options:
   #   resources :products do

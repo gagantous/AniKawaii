@@ -11,6 +11,7 @@ gem 'jquery-turbolinks'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'nprogress-rails'
 gem 'will_paginate-bootstrap'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem "font-awesome-rails"

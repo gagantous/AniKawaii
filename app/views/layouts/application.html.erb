@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content="Anikawaii is where you would be able to find all your short anime gifs clips together in one place" name="description">
+  <meta content="Anikawaii is where you can find all the anime gifs clips together in one place" name="description">
   <title>
   <%= if content_for?(:title) then yield(:title) + ' | ' end %>
   Anikawaii - Anime GIFs
@@ -32,9 +32,13 @@
                <li>
                   <a href=<%= sort_rating_path %>><h4 class="navitem">Popular</h4></a>
                </li>
+                <li>
+                <a href=<%= random_path %>><h4 class="navitem">Random</h4></a>
+              </li>
               <li>
                 <a href=<%= about_path %>><h4 class="navitem">About</h4></a>
               </li>
+              
             </ul>
            
           

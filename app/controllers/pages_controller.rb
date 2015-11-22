@@ -11,6 +11,10 @@ class PagesController < ApplicationController
 
 	end
 
+	def random
+		@animegif = Animegif.limit(12).order("RANDOM()")
+	end
+
 	def search
 		@animegif = Animegif.search_by_name(params[:search])
 	end

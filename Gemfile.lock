@@ -83,6 +83,7 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    nprogress-rails (0.1.6.7)
     pg (0.17.1)
     pg_search (1.0.5)
       activerecord (>= 3.1)
@@ -176,6 +177,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  nprogress-rails
   pg
   pg_search
   rails (= 4.2.4)
