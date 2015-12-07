@@ -20,6 +20,11 @@ task :fetch_animegifs => :environment do
      downvotes = s["data"]["downs"]
      score = s["data"]["score"]
 
+       if title.include? "Akira Hiiragi [Valkyrie Drive: Mermaid]"
+                return
+        end
+
+
      if url.include? "gfycat"
         puts "I am gfycat"
        if url.include? "gifv" 

@@ -5,7 +5,7 @@ SitemapGenerator::Sitemap.create do
 
   add '/pages'
   Animegif.find_each do |gif|
-    add animegifs_path(gif), lastmod: gif.updated_at
+    add animegif_path(gif), lastmod: gif.updated_at
   end
   # Put links creation logic here.
   #
