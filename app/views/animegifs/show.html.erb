@@ -10,7 +10,7 @@
 
 			<h3 class="text-primary"><%= @Animegif.name %>
 			<% if !@Animegif.redditurl.nil? %>
-				<%= link_to image_tag("redditicon.png"), @Animegif.redditurl %></h3>
+				<%= link_to image_tag("redditicon.png"), @Animegif.redditurl,:rel => "nofollow" %></h3>
 			<% end %>
 		</div>
 

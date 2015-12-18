@@ -1,20 +1,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  # For details on connection pooling, see <%= ENV["DATABASE_USER_KEY"] %> configuration guide
+  # http://guides.rubyon<%= ENV["DATABASE_USER_KEY"] %>.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-  username: rails
-  password: wraith123
+  username: <%= ENV["DATABASE_USER_KEY"] %>
+  password: <%= ENV["DATABASE_PASSWORD_KEY"] %>
 
 development:
   adapter: postgresql
   encoding: unicode
   pool: 5
   database: anikawaii_development
-  username: rails
-  password: wraith123
+  username: <%= ENV["DATABASE_USER_KEY"] %>
+  password: <%= ENV["DATABASE_PASSWORD_KEY"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -26,5 +26,5 @@ test:
 production:
   <<: *default
   database: anikawaii_production
-  username: rails
-  password: wraith123
+  username: <%= ENV["DATABASE_USER_KEY"] %>
+  password: <%= ENV["DATABASE_PASSWORD_KEY"] %>
