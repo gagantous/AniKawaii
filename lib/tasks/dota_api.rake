@@ -99,7 +99,7 @@ task :dota2 => :environment do
     end
     p 'Icon Scraping Complete'
     sleep(20)
-    Scrape wallpapers
+    #Scrape wallpapers
     wallpapers = page.search('article')
     wallpaper_images = []
     wallpapers.each do |wallpaper|
