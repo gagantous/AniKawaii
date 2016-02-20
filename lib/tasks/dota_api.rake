@@ -104,8 +104,15 @@ task :dota2 => :environment do
     wallpaper_images = []
     wallpapers.each do |wallpaper|
       img = wallpaper.search('div > a > img') 
-      img_src = img.attr('data-lazy-src').text.strip
+      img_attr = img.attr('data-lazy-src')
+      if img_attr # if lazy attr exist, use else use src attr
+        img_src = img.attr('data-lazy-src').text.strip
+      else
+        p "Adjusting img src attribute for #{img_link} because bad attribute"
+        img_src = img.attr('src').text.strip
+      end
       item = ApiItem.new(image: img_src,api_type: "dota2_wallpaper")
+
       if item.save
         p "Api Wallpaper Item generated #{img_src}"
       else
