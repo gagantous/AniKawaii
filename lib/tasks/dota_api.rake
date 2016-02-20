@@ -93,10 +93,10 @@ task :dota2 => :environment do
           p "Failed to save the api_item!"
         end
      end
-    # scrape icon categories
-    # icon_category_links.each do |link|
-    #   scrape_category_img(link)
-    # end
+    #scrape icon categories
+    icon_category_links.each do |link|
+      scrape_category_img(link)
+    end
     p 'Icon Scraping Complete'
     sleep(20)
     #Scrape wallpapers
