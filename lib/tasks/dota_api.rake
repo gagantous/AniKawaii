@@ -43,7 +43,7 @@ task :dota2 => :environment do
         end
         item = ApiItem.new(image: img_src,api_type: "dota2_wallpaper")
         if item.save
-          p "Api Wallpaper Item generated #{img_src}"
+         # p "Api Wallpaper Item generated #{img_src}"
         else
           p "Failed to save the api_item!"
         end
@@ -69,7 +69,7 @@ task :dota2 => :environment do
         p img_src
         item = ApiItem.new(image: img_src,api_type: "dota2_category_images",link: img_link)
          if item.save
-          "Api Icon Item generated #{img_src}"
+         # "Api Icon Item generated #{img_src}"
         else
           p "Failed to save the api_item!"
         end
@@ -88,7 +88,7 @@ task :dota2 => :environment do
         item = ApiItem.new(image: char_img_src,api_type: "dota2_icon",link: char_link)
         icon_category_links << char_link
         if item.save
-          p "Api Icon Item generated #{char_img_src}"
+          #p "Api Icon Item generated #{char_img_src}"
         else
           p "Failed to save the api_item!"
         end
@@ -97,8 +97,9 @@ task :dota2 => :environment do
     icon_category_links.each do |link|
       scrape_category_img(link)
     end
-    sleep(5)
-    #Scrape wallpapers
+    p 'Icon Scraping Complete'
+    sleep(20)
+    Scrape wallpapers
     wallpapers = page.search('article')
     wallpaper_images = []
     wallpapers.each do |wallpaper|
