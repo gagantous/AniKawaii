@@ -67,7 +67,7 @@ task :dota2 => :environment do
           img_src = img.attr('src').text.strip
         end
         p img_src
-        item = ApiItem.new(image: img_src,api_type: "dota2_category_images")
+        item = ApiItem.new(image: img_src,api_type: "dota2_category_images",link: img_link)
          if item.save
           "Api Icon Item generated #{img_src}"
         else
