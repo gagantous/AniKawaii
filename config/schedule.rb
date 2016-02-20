@@ -26,3 +26,7 @@ end
 every 1.day, :at => '5:00 am' do
   rake "RAILS_ENV=production rake sitemap:refresh"
 end
+
+every :month do 
+	rake 'dota_api'
+end

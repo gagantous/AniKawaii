@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110111152) do
+ActiveRecord::Schema.define(version: 20160220050821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20151110111152) do
     t.string   "webmurl"
     t.string   "slug"
     t.string   "redditurl"
+  end
+
+  create_table "api_items", force: :cascade do |t|
+    t.string   "link"
+    t.string   "image"
+    t.string   "api_type"
+    t.string   "image_thumbnail"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

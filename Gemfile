@@ -24,10 +24,15 @@ gem 'pg_search'
 gem 'simple_form'
 gem 'pg'
 
+gem 'active_model_serializers'
+
 gem 'sitemap_generator'
 gem 'whenever', require: false
 # gem 'bcrypt', '~> 3.1.7'
 
+#scraping
+gem 'mechanize'
+gem 'nokogiri'
 # Use Unicorn as the app server
 
 group :development do

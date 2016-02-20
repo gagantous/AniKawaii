@@ -2,13 +2,24 @@ class PagesController < ApplicationController
 
 	
 	def index
-
 		#For some reason per_page is -2 the actual number
-
 		@animegif = Animegif.paginate(:page => params[:page], :per_page => 12).order('created_at DESC')
-
 		##Post.page(params[:page]).order('created_at DESC')	
+	end
 
+	def dota2main
+		@item = ApiItem.where(:api_type => 'dota2_wallpaper')
+		render json: @item, root: false,each_serializer: ApiItemsSerializer
+	end
+
+	def dota2icon
+		@item = ApiItem.where(:api_type => 'dota2_icon')
+		render json: @item, root: false,each_serializer: ApiItemsSerializer
+	end
+
+	def dota2icon_all
+		@item = ApiItem.where(:api_type => 'dota2_category_images')
+		render json: @item, root: false,each_serializer: ApiItemsSerializer
 	end
 
 	def random

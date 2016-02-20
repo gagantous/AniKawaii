@@ -21,7 +21,13 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'sort_rating' => 'pages#ratingsort'
   get 'random' => 'pages#random'
-
+  scope :api do
+    scope :dota2 do
+      get 'main' => 'pages#dota2main'
+      get 'icons' => 'pages#dota2icon'
+      get 'icons/all' => 'pages#dota2icon_all'
+    end
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
