@@ -94,9 +94,9 @@ task :dota2 => :environment do
         end
      end
     # scrape icon categories
-    icon_category_links.each do |link|
-      scrape_category_img(link)
-    end
+    # icon_category_links.each do |link|
+    #   scrape_category_img(link)
+    # end
     p 'Icon Scraping Complete'
     sleep(20)
     #Scrape wallpapers
@@ -108,7 +108,7 @@ task :dota2 => :environment do
       if img_attr # if lazy attr exist, use else use src attr
         img_src = img.attr('data-lazy-src').text.strip
       else
-        p "Adjusting img src attribute for #{img_link} because bad attribute"
+        p "Adjusting img src attribute for #{img_src} because bad attribute"
         img_src = img.attr('src').text.strip
       end
       item = ApiItem.new(image: img_src,api_type: "dota2_wallpaper")
