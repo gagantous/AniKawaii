@@ -41,7 +41,7 @@ task :dota2 => :environment do
           p "Adjusting img src attribute for #{img_link} because bad attribute"
           img_src = img.attr('src').text.strip
         end
-        item = ApiItem.new(image: img_src,api_type: "dota2_wallpaper")
+        item = ApiItem.find_or_create_by(image: img_src,api_type: "dota2_wallpaper")
         if item.save
          # p "Api Wallpaper Item generated #{img_src}"
         else
@@ -67,7 +67,7 @@ task :dota2 => :environment do
           img_src = img.attr('src').text.strip
         end
         p img_src
-        item = ApiItem.new(image: img_src,api_type: "dota2_category_images",link: img_link)
+        item = ApiItem.find_or_create_by(image: img_src,api_type: "dota2_category_images",link: img_link)
          if item.save
          # "Api Icon Item generated #{img_src}"
         else
@@ -85,7 +85,7 @@ task :dota2 => :environment do
       icons.each do |char|
         char_img_src = char.search('img').attr('src').text
         char_link = char.attr('href')
-        item = ApiItem.new(image: char_img_src,api_type: "dota2_icon",link: char_link)
+        item = ApiItem.find_or_create_by(image: char_img_src,api_type: "dota2_icon",link: char_link)
         icon_category_links << char_link
         if item.save
           #p "Api Icon Item generated #{char_img_src}"
@@ -111,7 +111,7 @@ task :dota2 => :environment do
         p "Adjusting img src attribute for #{img_src} because bad attribute"
         img_src = img.attr('src').text.strip
       end
-      item = ApiItem.new(image: img_src,api_type: "dota2_wallpaper")
+      item = ApiItem.find_or_create_by(image: img_src,api_type: "dota2_wallpaper")
 
       if item.save
         p "Api Wallpaper Item generated #{img_src}"

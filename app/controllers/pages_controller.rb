@@ -7,21 +7,6 @@ class PagesController < ApplicationController
 		##Post.page(params[:page]).order('created_at DESC')	
 	end
 
-	def dota2main
-		@item = ApiItem.where(:api_type => 'dota2_wallpaper')
-		render json: @item, root: false,each_serializer: ApiItemsSerializer
-	end
-
-	def dota2icon
-		@item = ApiItem.where(:api_type => 'dota2_icon')
-		render json: @item, root: false,each_serializer: ApiItemsSerializer
-	end
-
-	def dota2icon_all
-		@item = ApiItem.where(:api_type => 'dota2_category_images')
-		render json: @item, root: false,each_serializer: ApiItemsSerializer
-	end
-
 	def random
 		@animegif = Animegif.limit(12).order("RANDOM()")
 	end
@@ -46,4 +31,22 @@ class PagesController < ApplicationController
 	def list
 
 	end
+
+	# API
+	def lolmain
+		@item = ApiLol.where(:api_type => 'main')
+		render json: @item, root: false,each_serializer: ApiLolsSerializer
+	end
+
+	def lolfanart
+		@item = ApiLol.where(:api_type => 'fanart')
+		render json: @item, root: false,each_serializer: ApiLolsSerializer
+	end
+
+	def lolrandom
+		@item = ApiLol.limit(65).order("RANDOM()")
+		render json: @item, root: false,each_serializer: ApiLolsSerializer
+	end
+	
+	# END API #
 end

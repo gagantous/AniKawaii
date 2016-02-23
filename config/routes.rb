@@ -22,10 +22,17 @@ Rails.application.routes.draw do
   get 'sort_rating' => 'pages#ratingsort'
   get 'random' => 'pages#random'
   scope :api do
+    #Note APIItem = Dota 2 api records
+    #     APILOL = LOL 2 API Records (LOL has way too many images)
     scope :dota2 do
       get 'main' => 'pages#dota2main'
       get 'icons' => 'pages#dota2icon'
       get 'icons/all' => 'pages#dota2icon_all'
+    end
+    scope :lol do
+      get 'main' => 'pages#lolmain'
+      get 'fanart' => 'pages#lolfanart'
+      get 'random' => 'pages#lolrandom'
     end
   end
   # Example resource route with options:
