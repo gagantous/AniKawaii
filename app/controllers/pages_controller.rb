@@ -33,6 +33,22 @@ class PagesController < ApplicationController
 	end
 
 	# API
+
+	def dota2main
+ 		@item = ApiItem.where(:api_type => 'dota2_wallpaper')
+ 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+	end
+ 
+ 	def dota2icon
+ 		@item = ApiItem.where(:api_type => 'dota2_icon')
+ 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+ 	end
+ 
+	def dota2icon_all
+ 		@item = ApiItem.where(:api_type => 'dota2_category_images')
+ 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+ 	end
+ 
 	def lolmain
 		@item = ApiLol.where(:api_type => 'main')
 		render json: @item, root: false,each_serializer: ApiLolsSerializer
