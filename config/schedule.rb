@@ -27,6 +27,11 @@ every 1.day, :at => '5:00 am' do
   rake "RAILS_ENV=production rake sitemap:refresh"
 end
 
-every :month do 
-	rake 'dota_api'
-end
+# API stuff, maybe next time? No reason to refresh
+# every :month do 
+# 	rake 'dota_api'
+# end
+
+# every 3.months do 
+# 	rake 'lol'
+# end

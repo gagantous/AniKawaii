@@ -4,14 +4,17 @@ task :lol => :environment do
     def scrape_img(url,type,thumb_url)
       img_link = url.to_s
       thumbnail_url = thumb_url.to_s
+      image_type = type.to_s
       api_type = type.to_s
       mechanize = Mechanize.new
       page = mechanize.get(img_link)
       img_src = page.search("#main_wallpaper").attr("src").text.strip
-      if type == "fanart"
+      if image_type == "fanart"
         img_src.prepend("https:")
       end
       item = ApiLol.find_or_create_by(image: img_src,thumb: thumbnail_url,api_type: api_type)
+      
+        #  p "This is thumbnail #{thumbnail_url}"
       if item.save
         p "LOL Wallpaper Item generated #{img_src}"
       else
@@ -29,8 +32,11 @@ task :lol => :environment do
         wallpapers.each do |wallpaper|
           img = wallpaper.search('table > tr > td > .boxgrid > a > img') 
           img_src = img.attr('src').text.strip
+         # p "This is Scrape Pagination URL #{img_src}"
           img_link = wallpaper.search('table > tr > td > .boxgrid > a').attr('href').text.strip
-          img_src.prepend("https:")
+          if type == "fanart" 
+            img_src.prepend("https:")
+          end
           if type == "main"
             img_link.prepend("https://wall.alphacoders.com/")
           end
@@ -86,7 +92,7 @@ task :lol => :environment do
       scrape_img(img_link,"main",img_src)
         #p "Thumb " + img_src
     end
-    #paginate all wallpapers
+   # paginate all wallpapers
     loop do
       find_links = page.link_with(dom_id: "next_page")
       end_paginate_check = page.search("#next_page").attr("href").text.strip
@@ -105,6 +111,6 @@ task :lol => :environment do
   
    fanart()
    sleep(60)
-   main()
+   #main()
    p "Scraping Complete"
 end
