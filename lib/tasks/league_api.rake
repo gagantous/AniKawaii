@@ -111,6 +111,6 @@ task :lol => :environment do
   
    fanart()
    sleep(60)
-   #main()
+   main()
    p "Scraping Complete"
 end
