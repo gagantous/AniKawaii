@@ -35,6 +35,12 @@ Rails.application.routes.draw do
       get 'random' => 'pages#lolrandom'
     end
   end
+
+  scope :projects do
+    get 'web' => 'projects#web'
+    get 'mobile' => 'projects#mobile'
+  end
+  get 'projects' => 'projects#index'
   # Example resource route with options:
   #   resources :products do
   #     member do

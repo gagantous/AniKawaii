@@ -16,20 +16,7 @@ class PagesController < ApplicationController
 	end
 
 	def ratingsort
-
 		@animegif = Animegif.paginate(:page => params[:page], :per_page => 12).order('score DESC')
-	end
-
-	def contact
-
-	end
-
-	def about
-
-	end
-
-	def list
-
 	end
 
 	# API
