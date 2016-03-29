@@ -24,7 +24,7 @@ task :dota2 => :environment do
       end
     end
 
-    def scrape_hd_img(link,thumbnail_url)
+    def scrape_hd_img(link,thumbnail_url,api_type)
       sleep(1)
       mechanize = Mechanize.new
       page = mechanize.get(link)
@@ -34,7 +34,12 @@ task :dota2 => :environment do
       page = mechanize.get(img_link)
       img_src = page.search(".download-button > p > a").attr("href").text.strip
       p "HD #{img_src} - Thumbnail #{thumbnail_url}"
-      item = ApiItem.find_or_create_by(image: img_src,api_type: "dota2_wallpaper",image_thumbnail: thumbnail_url)
+      if api_type == ""
+        doto_type = "dota2_wallpaper" 
+      else
+        doto_type = api_type
+      end
+      item = ApiItem.find_or_create_by(image: img_src,api_type: doto_type,image_thumbnail: thumbnail_url)
       if item.save
         p "HD Img#{img_src} ----- Thumbnail #{thumbnail_url}"
       else
@@ -59,7 +64,7 @@ task :dota2 => :environment do
           img_src = img.attr('src').text.strip
         end
         hd_image_link = wallpaper.search("div > a").attr("href").text.strip
-        scrape_hd_img(hd_image_link,img_src)
+        scrape_hd_img(hd_image_link,img_src,"")
       end
     end
 
@@ -80,7 +85,7 @@ task :dota2 => :environment do
           p "Adjusting img src attribute for #{img_link} because bad attribute"
           img_src = img.attr('src').text.strip
         end
-        scrape_hd_img(hd_image_link,img_src)
+        scrape_hd_img(hd_image_link,img_src,"dota2_category_images")
       end
       paginate_link(url)
     end
@@ -121,7 +126,7 @@ task :dota2 => :environment do
         img_src = img.attr('src').text.strip
       end
       hd_image_link = wallpaper.search("div > a").attr("href").text.strip
-      scrape_hd_img(hd_image_link,img_src)
+      scrape_hd_img(hd_image_link,img_src,"")
     end
     #Loop through all pagination links for wallpaper
     loop do
