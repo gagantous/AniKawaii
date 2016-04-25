@@ -24,7 +24,7 @@ every :hour do
 end
 
 every 1.day, :at => '5:00 am' do
-  rake "RAILS_ENV=production rake sitemap:refresh"
+  rake "sitemap:refresh"
 end
 
 # API stuff, maybe next time? No reason to refresh
