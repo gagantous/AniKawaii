@@ -12,4 +12,15 @@ if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!=
     s.parentNode.insertBefore(g, s);
 }(document, 'script'));
 
+$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
+	function hoverVideo(e) {
+		$('video',this).get(0).play();
+		$('header',this).hide();
+	}
+
+	function hideVideo(e) {
+		$('video',this).get(0).pause();
+		$('header',this).show();
+	}
+
 

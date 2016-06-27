@@ -1,16 +1,3 @@
-<script> 	$(document).on('mouseenter','.video', hoverVideo ).on('mouseleave','.video',hideVideo );
-	function hoverVideo(e) {
-		$('video',this).get(0).play();
-		$('header',this).hide();
-	}
-
-	function hideVideo(e) {
-		$('video',this).get(0).pause();
-		$('header',this).show();
-	}
-</script>
-
- 
 <div class="container">
 
 	<div class="row">
@@ -22,49 +9,10 @@
 			<% urlClass = gif.urlType %>
 
 			<% if urlClass.include? "gfycat" %>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 thumb">
-
-					<div class="video">
-						<div class="module">
-							
-							<%= render 'rating',gif: gif %>
-
-					<div class="embed-responsive embed-responsive-16by9">
-						<%= link_to(gif) do %>
-								<video class="embed-responsive-item" poster="https://thumbs.gfycat.com/<%= gif.url %>-poster.jpg" loop>   
-							  
-			            <source src=<%= gif.webmurl.sub("http://","https://") %> type="video/webm">
-			            <source src=<%= gif.mp4url.sub("http://","https://") %> type="video/mp4">	
-		            
-			 		</video>  
-
-			 		<% end %>
-			 		</div>
-			 	</div>
-			 </div>
-			</div>
+				<%= render 'gfycat',gif: gif %>
 		 	<% else %> 
 		 	<!-- imgur !-->
-		 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 thumb">
-
-					<div class="video">
-						<div class="module">
-							<%= render 'rating',gif: gif %>
-
-					<div class="embed-responsive embed-responsive-16by9">
-						<%= link_to(gif) do %>
-								<video class="embed-responsive-item" poster="<%= gif.urlType.sub("http://","https://") %>" loop>   
-							  
-			            <source src=<%= gif.webmurl.sub("http://","https://") %> type="video/webm">
-			            <source src=<%= gif.mp4url.sub("http://","https://") %> type="video/mp4">	
-		            
-			 		</video>  
-
-			 		<% end %>
-			 		</div>
-			 	</div>
-			 </div>
-			</div>
+		 		<%= render 'imgur',gif: gif %>
 				<!-- ALTERNATIVE, for now only HTML5 videos -->
 			<% end %>
 		<% end %>
@@ -75,9 +23,3 @@
 </div>
 
 
-  <footer>
-          
-             <a href="https://github.com/wraithseeker/AniKawaii">
-             <h5 class="text-center text-info">Github</h5>
-            </a>
-        </footer>
