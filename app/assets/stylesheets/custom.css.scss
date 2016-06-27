@@ -4,6 +4,26 @@
 	margin-top: 20px;
 }
 
+.module {
+
+}
+
+.gif-column {
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.01) 100%);
+    background: linear-gradient(to top,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.01) 100%);
+    border-radius: 0 0 3px 3px;
+    bottom: 0;
+    color: #fff;
+    padding: 5px;
+    //padding-top: 40px;
+    position: absolute;
+    //text-align: left;
+    text-shadow: 0 0 1px rgba(0,0,0,0.59);
+    width: 100%;
+    z-index: 999;
+}
+
+
 .bg-image {
   position: fixed; 
   top: 0; 
@@ -94,16 +114,16 @@ textarea{
 }
 
 // for votes
-.module h4 {
-	font-size: 1.2em;
-	font-style: italic;
-	position: absolute;
-	top: -5px;
-	left: 35px;
-	color: white;
+// .module h4 {
+// 	font-size: 1.2em;
+// 	font-style: italic;
+// 	position: absolute;
+// 	top: -5px;
+// 	left: 35px;
+// 	color: white;
 
 
-}
+// }
 
 // for anime title
 .module > header > h3 {

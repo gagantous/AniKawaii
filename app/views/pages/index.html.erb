@@ -20,26 +20,21 @@
 		<% @animegif.each do |gif| %>
 			<% title = gif.url %>
 			<% urlClass = gif.urlType %>
+
 			<% if urlClass.include? "gfycat" %>
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 thumb">
 
 					<div class="video">
 						<div class="module">
-							<header>
-								<!-- title of gif <h3><%= gif.name %></h3> -->
-								
-								<div class="vote">
-								<%= image_tag("thumbs.png",:alt => "thumbsup") %>
-									<h4><%= gif.score %></h4>
-								</div>
-							</header>
+							
+							<%= render 'rating',gif: gif %>
 
 					<div class="embed-responsive embed-responsive-16by9">
 						<%= link_to(gif) do %>
-								<video class="embed-responsive-item" poster="http://thumbs.gfycat.com/<%= gif.url %>-poster.jpg" loop>   
+								<video class="embed-responsive-item" poster="https://thumbs.gfycat.com/<%= gif.url %>-poster.jpg" loop>   
 							  
-			            <source src=<%= gif.webmurl %> type="video/webm">
-			            <source src=<%= gif.mp4url %> type="video/mp4">	
+			            <source src=<%= gif.webmurl.sub("http://","https://") %> type="video/webm">
+			            <source src=<%= gif.mp4url.sub("http://","https://") %> type="video/mp4">	
 		            
 			 		</video>  
 
@@ -49,25 +44,19 @@
 			 </div>
 			</div>
 		 	<% else %> 
+		 	<!-- imgur !-->
 		 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 thumb">
 
 					<div class="video">
 						<div class="module">
-							<header>
-								<!-- title of gif <h3><%= gif.name %></h3> -->
-								
-								<div class="vote">
-								<%= image_tag("thumbs.png",:alt => "thumbsup") %>
-									<h4><%= gif.score %></h4>
-								</div>
-							</header>
+							<%= render 'rating',gif: gif %>
 
 					<div class="embed-responsive embed-responsive-16by9">
 						<%= link_to(gif) do %>
-								<video class="embed-responsive-item" poster="<%= gif.urlType %>" loop>   
+								<video class="embed-responsive-item" poster="<%= gif.urlType.sub("http://","https://") %>" loop>   
 							  
-			            <source src=<%= gif.webmurl %> type="video/webm">
-			            <source src=<%= gif.mp4url %> type="video/mp4">	
+			            <source src=<%= gif.webmurl.sub("http://","https://") %> type="video/webm">
+			            <source src=<%= gif.mp4url.sub("http://","https://") %> type="video/mp4">	
 		            
 			 		</video>  
 
@@ -92,27 +81,3 @@
              <h5 class="text-center text-info">Github</h5>
             </a>
         </footer>
-
- <script type"text/javascript" src="http://test.gfycat.com/gfycat_test_may18.js"></script>  
-
-<script>
-
-	
-	if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)){
-  		
-		$('video').prop("controls",true);
-	}
-
-
-
- (function(d, t) {
-    var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
-    s.parentNode.insertBefore(g, s);
-}(document, 'script'));
-
-
-
-
-</script>
