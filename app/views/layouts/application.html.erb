@@ -45,16 +45,18 @@
               
             </ul>
            
-          
- <div class="input-append">
-           <%= form_tag(animegif_search_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-                <%= text_field_tag :search, params[:search], class: "form-control padding-search", placeholder: "Search Animegif" %>
-    
-              <%= button_tag(type: "submit", class: "btn btn-primary padding-search") do %>
-                  <i class="fa fa-search 6x"></i>
-        <% end %>
-        <% end %>
-  </div>
+          <div class="input-group" id="custom-search-input">
+            <!-- typeahead !-->
+             <%= form_tag(animegif_search_path, :method => "get", class: "navbar-form", id: "search-form" ) do %>
+                <%= text_field_tag :search, params[:search], class: "form-control search-query", placeholder: "Search Anime Gifs" %>
+                <div class="input-group-btn">
+                  <%= button_tag(type: "submit", class: "btn") do %>
+                    <span class=" glyphicon glyphicon-search"></span>
+                  <% end %>
+                </div>
+             <% end %>
+           </div>
+ 
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
@@ -62,12 +64,6 @@
 
 
 <%= yield %>
-  <footer>        
-      <a href="https://github.com/wraithseeker/AniKawaii">
-        <h5 class="text-center text-info">Github</h5>
-      </a>
-  </footer>
-
 
 
 

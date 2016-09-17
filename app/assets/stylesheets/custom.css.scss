@@ -1,13 +1,44 @@
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 .back-padding{
-	margin-top: 20px;
+	margin-right: 15px;
 }
 
-.module {
+#custom-search-input {
+  margin:0;
+  margin-top: 10px;
+  padding: 0;
+  .search-query {
+    padding-right: 30px;
+    padding-left: 10px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    width: 240px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
 
+  button {
+    border: 0;
+    background: none;
+    color: #888;
+    //$blue-color
+    /** belows styles are working good */
+    padding: 5px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .search-query:focus + button {
+     z-index: 3; 
+  }
 }
-
 .gif-column {
 	background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.01) 100%);
     background: linear-gradient(to top,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.01) 100%);
@@ -113,17 +144,6 @@ textarea{
 
 }
 
-// for votes
-// .module h4 {
-// 	font-size: 1.2em;
-// 	font-style: italic;
-// 	position: absolute;
-// 	top: -5px;
-// 	left: 35px;
-// 	color: white;
-
-
-// }
 
 // for anime title
 .module > header > h3 {
@@ -146,7 +166,7 @@ textarea{
 .navitem {
 	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
-   font-size: 1.6em;
+   font-size: 16px;
    color: black;
 }
 
@@ -157,11 +177,10 @@ textarea{
 }
 .logotitle{
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 1.60em;
+	font-size: 24px;
 	font-weight: bold;
 	position: relative;
 	color: black;
-	top: 3px;
 }
 
 
@@ -210,7 +229,7 @@ textarea{
 	
 }
 .flickr_pagination {
-  text-align: right;
+  text-align: left;
   padding: 0.3em;
   cursor: default; }
   .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {

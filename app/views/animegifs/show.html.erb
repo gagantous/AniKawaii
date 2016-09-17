@@ -1,19 +1,19 @@
 <% title @Animegif.name %>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-1">
+		<div class="col-lg-12">
 			<%= link_to root_path do %> 
- 			<button type="button" class="btn btn-primary btn-lg back-padding ">Back</button>
+ 				<button type="button" class="btn btn-primary btn-md back-padding ">Back</button>
  			<% end %>
+ 			<h3 class="text-primary" style="display:inline;">
+ 				<%= @Animegif.name %>
+				<% if !@Animegif.redditurl.nil? %>
+					<%= link_to image_tag("redditicon.png",style:"margin-left:30px;"), @Animegif.redditurl.sub("http://","https://"),:rel => "nofollow" %>
+				<% end %>
+			</h3>
 		</div>
-		<div class="col-lg-9">
-
-			<h3 class="text-primary"><%= @Animegif.name %>
-			<% if !@Animegif.redditurl.nil? %>
-				<%= link_to image_tag("redditicon.png"), @Animegif.redditurl.sub("http://","https://"),:rel => "nofollow" %></h3>
-			<% end %>
-		</div>
-
+	</div>
+	<div class="row">
 		<div class="col-lg-9 col-md-12 col-xs-12">	
 		<% if @Animegif.urlType.include? "gfycat" %>
 			<div class="video">
@@ -37,6 +37,7 @@
 			</div>
 		</div>
 		<% end %>
+	</div>
 		<!-- End of col-lg-9 column -->
 		</div>
 	</div>
