@@ -1,3 +1,3 @@
 class ApiDota < ActiveRecord::Base
-  mount_uploader :full_img, DefaultUploader
+  mount_uploader :img, DefaultUploader
 end
