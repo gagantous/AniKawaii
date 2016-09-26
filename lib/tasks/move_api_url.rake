@@ -1,5 +1,5 @@
 desc "Upload local images"
-task :local_images => :environment do
+task :update_api_urls => :environment do
   @dota = ApiDota.all
   @dota.each do |i|
     i.full_img.remote_url = i.image
