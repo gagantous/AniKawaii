@@ -4,7 +4,7 @@ task :local_images => :environment do
   @images.each do |i|
     location = Pathname.new(i).open
     d = ApiDota.new
-    d.full_img = location
+    d.img = location
     d.api_type = "dota2_popular"
     d.save
     p "Successfully saved #{i}"
