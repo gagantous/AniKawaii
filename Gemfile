@@ -24,6 +24,8 @@ gem 'pg_search'
 gem 'simple_form'
 gem 'pg'
 
+gem "mini_magick"
+gem 'carrierwave'
 gem 'active_model_serializers'
 
 gem 'sitemap_generator'

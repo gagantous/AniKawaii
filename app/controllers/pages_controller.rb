@@ -22,18 +22,23 @@ class PagesController < ApplicationController
 	# API
 
 	def dota2main
- 		@item = ApiItem.where(:api_type => 'dota2_wallpaper')
- 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+ 		@item = ApiDota.where(:api_type => 'dota2_wallpaper')
+ 		render json: @item, root: false,each_serializer: ApiDotasSerializer
 	end
  
  	def dota2icon
- 		@item = ApiItem.where(:api_type => 'dota2_icon')
- 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+ 		@item = ApiDota.where(:api_type => 'dota2_icon')
+ 		render json: @item, root: false,each_serializer: ApiDotasSerializer
  	end
  
 	def dota2icon_all
- 		@item = ApiItem.where(:api_type => 'dota2_category_images')
- 		render json: @item, root: false,each_serializer: ApiItemsSerializer
+ 		@item = ApiDota.where(:api_type => 'dota2_category_images')
+ 		render json: @item, root: false,each_serializer: ApiDotasSerializer
+ 	end
+
+ 	def dota2_popular
+ 		@item = ApiDota.where(:api_type => 'dota2_popular')
+ 		render json: @item, root: false,each_serializer: ApiDotasSerializer
  	end
  
 	def lolmain
