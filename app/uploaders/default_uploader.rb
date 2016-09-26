@@ -8,7 +8,7 @@ class DefaultUploader < CarrierWave::Uploader::Base
   process resize_to_limit: [1200,1200]
   process :quality => 90
   version :thumb do
-    process :resize_to_limit => [400, 400]
+    process :resize_to_limit => [500, 500]
   end
   # storage :fog
   # Override the directory where uploaded files will be stored.
