@@ -1,4 +1,4 @@
 class ApiDotasSerializer < ActiveModel::Serializer
-  attributes :image,:link,:image_thumbnail,:full_img
+  attributes :image,:link,:image_thumbnail,:img
 
 end

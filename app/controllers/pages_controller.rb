@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 	# API
 
 	def dota2main
- 		@item = ApiDota.where(:api_type => 'dota2_wallpaper')
+ 		@item = ApiDota.where(:api_type => 'dota2_wallpaper').limit(100).order("RANDOM()")
  		render json: @item, root: false,each_serializer: ApiDotasSerializer
 	end
  
@@ -37,7 +37,7 @@ class PagesController < ApplicationController
  	end
 
  	def dota2_popular
- 		@item = ApiDota.where(:api_type => 'dota2_popular')
+ 		@item = ApiDota.where(:api_type => 'dota2_popular').limit(100).order("RANDOM()")
  		render json: @item, root: false,each_serializer: ApiDotasSerializer
  	end
  
