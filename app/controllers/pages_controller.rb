@@ -42,17 +42,17 @@ class PagesController < ApplicationController
  	end
  
 	def lolmain
-		@item = ApiLol.where(:api_type => 'main')
+		@item = ApiLol.where(:api_type => 'main').limit(250).order("RANDOM()")
 		render json: @item, root: false,each_serializer: ApiLolsSerializer
 	end
 
 	def lolfanart
-		@item = ApiLol.where(:api_type => 'fanart')
+		@item = ApiLol.where(:api_type => 'fanart').limit(250).order("RANDOM()")
 		render json: @item, root: false,each_serializer: ApiLolsSerializer
 	end
 
 	def lolrandom
-		@item = ApiLol.limit(65).order("RANDOM()")
+		@item = ApiLol.limit(500).order("RANDOM()")
 		render json: @item, root: false,each_serializer: ApiLolsSerializer
 	end
 	
