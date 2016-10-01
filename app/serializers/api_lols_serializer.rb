@@ -1,4 +1,4 @@
 class ApiLolsSerializer < ActiveModel::Serializer
-  attributes :image,:thumb,:api_type
+  attributes :image,:link,:image_thumbnail,:img
 
 end
