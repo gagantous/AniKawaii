@@ -3,7 +3,7 @@ class CronGif
 		tries ||= 3
     	url = "https://www.reddit.com/r/animegifs/.json?limit=100"
 	    begin
-	      subreddit_json = JSON.load open(url)
+	      subreddit_json = JSON.load open(url,'User-Agent' => 'wraithseeker')
 	    rescue OpenURI::HTTPError => error
 	        puts "#{error}, retrying..."
 	        sleep(2.minutes)
